@@ -25,3 +25,6 @@ To get the weather for a location (replacing LAT & LONG with the latiude and lon
 To get the 7 day forecast for a location (replacing LAT & LONG with the latiude and longitude of your chosen location):
 
 ```weather forecast --location "LAT,LONG"```
+
+## Acknowledgments
+This app was originally based off the app built [here](https://timber.io/blog/creating-a-real-world-cli-app-with-node).
