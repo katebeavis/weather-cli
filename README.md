@@ -20,4 +20,8 @@ To see all available options:
 
 To get the weather for a location (replacing LAT & LONG with the latiude and longitude of your chosen location):
 
-```weather --location "LAT,LONG"```
+```weather today --location "LAT,LONG"```
+
+To get the 7 day forecast for a location (replacing LAT & LONG with the latiude and longitude of your chosen location):
+
+```weather forecast --location "LAT,LONG"```
