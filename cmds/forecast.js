@@ -1,5 +1,6 @@
 const ora = require('ora');
 const getWeather = require('../utils/weather');
+const convertTemp = require('../utils/tempConverter');
 
 module.exports = async args => {
   const spinner = ora().start();
@@ -16,7 +17,9 @@ module.exports = async args => {
       console.log(
         `\t${new Date(key.time * 1000).toLocaleDateString()}: ${
           key.summary
-        } High: ${key.temperatureHigh}. Low: ${key.temperatureLow}.`,
+				} High: ${convertTemp(key.temperatureHigh)}°C. Low: ${convertTemp(
+          key.temperatureLow,
+				)}°C.`,
       );
     });
   } catch (err) {

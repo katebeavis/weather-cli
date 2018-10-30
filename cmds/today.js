@@ -1,5 +1,6 @@
 const ora = require('ora');
 const getWeather = require('../utils/weather');
+const convertTemp = require('../utils/tempConverter');
 
 module.exports = async args => {
   const spinner = ora().start();
@@ -12,7 +13,7 @@ module.exports = async args => {
 
     console.log(`Current conditions in ${location}:`);
     console.log(
-      `\t${weather.currently.temperature}° ${weather.currently.summary}`,
+			`\t${convertTemp(weather.currently.temperature)}°C ${weather.currently.summary}`,
     );
   } catch (err) {
     spinner.stop();
