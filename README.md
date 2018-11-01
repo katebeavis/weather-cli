@@ -15,7 +15,7 @@ GEOCODE_URL=https://maps.googleapis.com/maps/api/geocode/json
 IP_DATA_API_KEY=YOUR_API_KEY_HERE
 IP_DATA_URL=https://api.ipdata.co
 ```
-Replace the ``DARK_SKY_API_KEY`` with your own from the [Dark Sky API](https://darksky.net/dev) and ``GOOGLE_PLACES_API_KEY`` from the [Google Maps API](https://developers.google.com/maps/documentation/geocoding/start#get-a-key).
+Replace the ``DARK_SKY_API_KEY`` with your own from the [Dark Sky API](https://darksky.net/dev), ``GOOGLE_PLACES_API_KEY`` from the [Google Maps API](https://developers.google.com/maps/documentation/geocoding/start#get-a-key) and ``IP_DATA_API_KEY`` from the [Ipdata API](https://ipdata.co/).
 
 ## Example usage
 To see all available options:
