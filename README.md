@@ -19,13 +19,13 @@ To see all available options:
 
 ```weather --help```
 
-To get the weather for a location (replacing LAT & LONG with the latitude and longitude of your chosen location):
+To get the weather for a location:
 
-```weather today --location "LAT,LONG"```
+```weather today -l "London"```
 
-To get the 7 day forecast for a location (replacing LAT & LONG with the latitude and longitude of your chosen location):
+To get the 7 day forecast for a location:
 
-```weather forecast --location "LAT,LONG"```
+```weather forecast -l "Princeton"```
 
 ## Acknowledgments
 This app was originally based off the app built [here](https://timber.io/blog/creating-a-real-world-cli-app-with-node).
