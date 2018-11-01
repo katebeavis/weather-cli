@@ -1,7 +1,6 @@
 const ora = require('ora');
-const getWeather = require('../utils/weather');
-const getCoordinates = require('../utils/lookup');
 const getLocation = require('../utils/location');
+const getWeather = require('../utils/getWeather');
 const convertTemp = require('../utils/tempConverter');
 
 module.exports = async args => {
@@ -11,9 +10,7 @@ module.exports = async args => {
 
   try {
 		const location = args.location || args.l || await getLocation();
-		const coordinates = await getCoordinates(location);
-		const queryString = `${coordinates.lat},${coordinates.lng}`;
-		const weather = await getWeather(queryString);
+		const weather = await getWeather(location);
     spinner.succeed('Weather loaded');
 
     console.log(`Current conditions in ${location}:`);

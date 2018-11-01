@@ -8,6 +8,10 @@
   },
   "author": "katebeavis84@gmail.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/katebeavis/weather-cli.git"
+  },
   "bin": {
     "weather": "bin/weather"
   },

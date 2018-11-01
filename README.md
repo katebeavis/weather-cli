@@ -22,13 +22,17 @@ To see all available options:
 
 ```weather --help```
 
-To get the weather for a location:
+To get the weather for a given location:
 
 ```weather today -l "London"```
 
-To get the 7 day forecast for a location:
+To get the 7 day forecast for a given location:
 
 ```weather forecast -l "Princeton"```
+
+To get the weather for your current location, omit the -l flag and location string:
+
+```weather today```
 
 ## Acknowledgments
 This app was originally based off the app built [here](https://timber.io/blog/creating-a-real-world-cli-app-with-node).
