@@ -11,6 +11,9 @@ In the ``.env`` file, add the following:
 DARK_SKY_API_KEY=YOUR_API_KEY_HERE
 DARK_SKY_URL=https://api.darksky.net/forecast
 GOOGLE_PLACES_API_KEY=YOUR_API_KEY_HERE
+GEOCODE_URL=https://maps.googleapis.com/maps/api/geocode/json
+IP_DATA_API_KEY=YOUR_API_KEY_HERE
+IP_DATA_URL=https://api.ipdata.co
 ```
 Replace the ``DARK_SKY_API_KEY`` with your own from the [Dark Sky API](https://darksky.net/dev) and ``GOOGLE_PLACES_API_KEY`` from the [Google Maps API](https://developers.google.com/maps/documentation/geocoding/start#get-a-key).
 

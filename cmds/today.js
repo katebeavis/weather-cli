@@ -13,8 +13,7 @@ module.exports = async args => {
 		const location = args.location || args.l || await getLocation();
 		const coordinates = await getCoordinates(location);
 		const queryString = `${coordinates.lat},${coordinates.lng}`;
-    const weather = await getWeather(queryString);
-
+		const weather = await getWeather(queryString);
     spinner.succeed('Weather loaded');
 
     console.log(`Current conditions in ${location}:`);
