@@ -10,12 +10,14 @@ const menus = {
   today: `
     weather today <options>
 
-		--location, -l ..... the location to use`,
+		--location, -l ..... the location to use
+		--fahrenheit, -f ..... display temperature in fahrenheit`,
 
 	forecast: `
     outside forecast <options>
 
-    --location, -l ..... the location to use`,
+		--location, -l ..... the location to use
+		--fahrenheit, -f ..... display temperature in fahrenheit`,
 };
 
 module.exports = args => {

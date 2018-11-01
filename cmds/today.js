@@ -5,20 +5,19 @@ const convertTemp = require('../utils/tempConverter');
 
 module.exports = async args => {
   const spinner = ora({
-    text: 'Loading weather'
+    text: 'Loading weather',
   }).start();
 
   try {
-		const location = args.location || args.l || await getLocation();
-		const weather = await getWeather(location);
+    const location = args.location || args.l || (await getLocation());
+    const tempFormat = args.fahrenheit || args.f;
+    const weather = await getWeather(location);
     spinner.succeed('Weather loaded');
-
+    const temp = tempFormat
+      ? `${weather.currently.temperature}°F`
+      : `${convertTemp(weather.currently.temperature)}°C`;
     console.log(`Current conditions in ${location}:`);
-    console.log(
-      `\t${convertTemp(weather.currently.temperature)}°C ${
-        weather.currently.summary
-      }`,
-    );
+    console.log(`\t${temp} ${weather.currently.summary}`);
   } catch (err) {
     spinner.fail('An error has occurred');
 
