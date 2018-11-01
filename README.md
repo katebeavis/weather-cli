@@ -34,5 +34,7 @@ To get the weather for your current location, omit the -l flag and location stri
 
 ```weather today```
 
+Temperaure displays in celsius as default but can be displayed in fahrenheit by adding the ``-f`` flag.
+
 ## Acknowledgments
 This app was originally based off the app built [here](https://timber.io/blog/creating-a-real-world-cli-app-with-node).
