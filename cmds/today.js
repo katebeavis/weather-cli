@@ -1,5 +1,6 @@
 const ora = require('ora');
 const getWeather = require('../utils/weather');
+const getCoordinates = require('../utils/lookup');
 const convertTemp = require('../utils/tempConverter');
 
 module.exports = async args => {
@@ -8,8 +9,10 @@ module.exports = async args => {
   }).start();
 
   try {
-    const location = args.location || args.l;
-    const weather = await getWeather(location);
+		const location = args.location || args.l;
+		const coordinates = await getCoordinates(location);
+		const queryString = `${coordinates.lat},${coordinates.lng}`;
+    const weather = await getWeather(queryString);
 
     spinner.succeed('Unicorns loaded');
 
@@ -22,6 +25,6 @@ module.exports = async args => {
   } catch (err) {
     spinner.fail('Unicorn error');
 
-    // console.error(err);
+    console.error(err);
   }
 };
