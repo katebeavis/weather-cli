@@ -11,19 +11,23 @@ module.exports = async args => {
   }).start();
 
   try {
-		const location = args.location || args.l || (await getLocation());
+    const location = args.location || args.l || (await getLocation());
+    const tempFormat = args.fahrenheit || args.f;
     const weather = await getWeather(location);
     spinner.succeed('Weather loaded');
-
     console.log(`Forecast for ${location}:`);
     const arr = weather.daily.data;
     arr.forEach(key => {
-      const highTemp = `${convertTemp(key.temperatureHigh)}°C`;
-      const lowTemp = `${convertTemp(key.temperatureLow)}°C`;
+      const highTemp = tempFormat
+        ? `${key.temperatureHigh}°F`
+				: `${convertTemp(key.temperatureHigh)}°C`;
+			const lowTemp = tempFormat
+				? `${key.temperatureLow}°F`
+				: `${convertTemp(key.temperatureLow)}°C`;
       console.log(
-				`\t${formatDate(new Date(key.time * 1000)).bold}: ${key.summary} High: ${
-				highTemp.red.bold
-				} Low: ${lowTemp.blue.bold}`,
+        `\t${formatDate(new Date(key.time * 1000)).bold}: ${
+          key.summary
+        } High: ${highTemp.red.bold} Low: ${lowTemp.blue.bold}`,
       );
     });
   } catch (err) {

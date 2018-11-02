@@ -11,11 +11,11 @@ module.exports = async args => {
   try {
     const location = args.location || args.l || (await getLocation());
     const tempFormat = args.fahrenheit || args.f;
-    const weather = await getWeather(location);
+		const weather = await getWeather(location);
+		const temp = tempFormat
+			? `${weather.currently.temperature}°F`
+			: `${convertTemp(weather.currently.temperature)}°C`;
     spinner.succeed('Weather loaded');
-    const temp = tempFormat
-      ? `${weather.currently.temperature}°F`
-      : `${convertTemp(weather.currently.temperature)}°C`;
     console.log(`Current conditions in ${location}:`);
     console.log(`\t${temp} ${weather.currently.summary}`);
   } catch (err) {
